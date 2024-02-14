@@ -53,4 +53,30 @@ enum WeatherCondition {
     Windy = "Windy",
 }
 const currentWeather = WeatherCondition.Sunny;
-console.log(currentWeather);
+//console.log(currentWeather);
+
+//Interface
+
+interface Person {
+    name: string,
+    age: number,
+    gender: string,
+}
+
+function introPerson (Person: Person) {
+    return `${Person.gender == ("Male" || "male") ? "Mr." : "Mrs."} ${Person.name} is ${Person.age} years old.`;
+}
+
+const Harry: Person = {
+    name: "Harry",
+    age: 56,
+    gender: "Male",
+}
+const Jenny: Person = {
+    name: "Jenny",
+    age: 55,
+    gender: "Female",
+}
+
+console.log(introPerson(Harry));
+console.log(introPerson(Jenny));
