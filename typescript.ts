@@ -78,5 +78,25 @@ const Jenny: Person = {
     gender: "Female",
 }
 
-console.log(introPerson(Harry));
-console.log(introPerson(Jenny));
+//console.log(introPerson(Harry));
+//console.log(introPerson(Jenny));
+
+//Generics
+
+function print<T>(x: T): T {
+    return x
+}
+
+//console.log(print<string>("Harry"));
+//console.log(print<number>(32));
+
+function BrandModel<S,N>(brand: S, model: S, make: N): [S,S,N] {
+    return [brand, model, make];
+}
+interface car {
+    name: string,
+    model: string,
+    make: number,
+}
+
+console.log(BrandModel<string,number>("Toyota", "MarkII", 1995));
