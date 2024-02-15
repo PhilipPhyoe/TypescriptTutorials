@@ -1,7 +1,21 @@
 {
   "dependencies": {
     "axios": "^1.6.7",
+    "express": "^4.18.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "name": "typescripttutorials",
+  "description": "Tutorials for Typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  },
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
