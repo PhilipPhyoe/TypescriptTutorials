@@ -1,3 +1,5 @@
+import axios, {AxiosResponse} from "axios";
+
 //Multidimensional Array
 const numbers: number [][] = [
     [1,2,3],
@@ -99,4 +101,29 @@ interface car {
     make: number,
 }
 
-console.log(BrandModel<string,number>("Toyota", "MarkII", 1995));
+//console.log(BrandModel<string,number>("Toyota", "MarkII", 1995));
+
+//Axios and Typescript
+
+interface Todo {
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean,
+}
+
+const fetchData = async () => {
+    try {
+        const response: AxiosResponse<Todo> = await axios.get('https://jsonplaceholder.typicode.com/todos/1'); 
+        console.log("Todo: ", response.data);
+    } catch (error: any) {
+        if (axios.isAxiosError(error)){
+            console.error(error.message);
+            if (error.response){
+                console.log(error.response.status);
+                console.log(error.response.data);
+            }
+        }
+    }
+}
+fetchData();
